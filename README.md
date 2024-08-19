@@ -1,4 +1,4 @@
-VIAaaS
+VIAaaS - NRL
 ---
 
 [![ViaVersion Discord](https://img.shields.io/badge/chat-on%20discord-blue.svg)](https://viaversion.com/discord)
