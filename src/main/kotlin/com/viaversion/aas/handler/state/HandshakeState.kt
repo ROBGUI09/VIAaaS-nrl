@@ -41,11 +41,7 @@ class HandshakeState : ConnectionState {
         val socketAddress = (handler.endRemoteAddress as InetSocketAddress).address
         val limit = RateLimit.rateLimitByIp[socketAddress]
 
-        if (!limit.handshakeLimiter.tryAcquire()
-            || (state == IntendedState.LOGIN && !limit.loginLimiter.tryAcquire())
-        ) {
-            throw StacklessException("Rate-limited")
-        }
+        
     }
 
     private fun handleNextState(handler: MinecraftHandler, packet: Handshake) {
