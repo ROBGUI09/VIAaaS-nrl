@@ -57,7 +57,7 @@ class LoginState : ConnectionState {
             is LoginSuccess -> handleLoginSuccess(handler, packet)
             is SetCompression -> handleCompression(handler, packet)
             is LoginAck -> handleLoginAck(handler, packet)
-            is UnknownPacket -> throw StacklessException("unknown packet ${packet.id}")
+            is UnknownPacket -> false //throw StacklessException("unknown packet ${packet.id}")
             else -> forward(handler, packet)
         }
     }
